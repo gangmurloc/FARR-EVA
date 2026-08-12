@@ -55,6 +55,6 @@ python -m unittest discover -s tests -v
 python examples/selector_demo.py
 ```
 
-원본 데이터, 생성 결과, 대형 모델 weight, 로그, 논문 원고와 저자정보는
+원본 데이터, 생성 결과, 대형 모델 weight, 로그, 논문 원고는
 의도적으로 제외했습니다. 아직 오픈소스 라이선스를 부여하지 않았으므로,
 공개 열람과 코드 재사용 허가는 동일하지 않습니다.
