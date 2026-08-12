@@ -32,7 +32,7 @@ trajectory 중 더 신뢰할 수 있는 답변을 선택할 수 있는가?
 
 ## 작성자와 기여
 
-**Gangil Lee** — 한림대학교 NLP Laboratory 학부 연구원
+**Ganggil Lee** — 한림대학교 NLP Laboratory 학부 연구생
 
 - FARR-EVA evidence-vector 중재 구조 설계
 - 후보 근거 측정과 selector 학습 구현
