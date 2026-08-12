@@ -14,6 +14,24 @@ redistribute benchmark records or Hugging Face model weights.
   The code contains a local IRCoT-style implementation; it is not represented
   as the official IRCoT codebase.
 
+### Source-provenance audit status
+
+On 2026-08-12, the public project files were compared against the then-current
+heads of the [official FLARE repository](https://github.com/jzbjyb/FLARE/tree/ec4b06b502b5ab54f3f9236b0112a5d28482e7bb)
+(`ec4b06b5`) and [official IRCoT repository](https://github.com/stonybrooknlp/ircot/tree/3c1820f698eea5eeddb4fba3c56b64c961e063e4)
+(`3c1820f6`). No identical project source files or project-specific prompt
+markers were found. The local package also uses a different compact module and
+runtime structure from both upstream repositories. This is evidence against
+wholesale vendoring, but it is **not** a legal certification that every line
+was independently implemented. The author must still confirm whether any
+individual code fragments were consulted or adapted before selecting a
+project-wide open-source license.
+
+Upstream licenses observed during that audit:
+
+- FLARE official repository: MIT License.
+- IRCoT official repository: Apache License 2.0.
+
 ## Benchmarks
 
 HotpotQA, 2WikiMultiHopQA, and MuSiQue are loaded from separately obtained

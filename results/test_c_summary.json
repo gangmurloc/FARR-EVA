@@ -1,5 +1,5 @@
 {
-  "schema": "farr-eva-public-test-c-summary-v1",
+  "schema": "farr-eva-public-test-c-summary-v2",
   "analysis_role": "locked Test-C result plus separately labelled post-hoc diagnostic",
   "test_c": {
     "question_count": 6000,
@@ -12,6 +12,26 @@
     "fixed_farr": {
       "macro_f1": 0.5140321046419086,
       "macro_exact_match": 0.41250000000000003
+    },
+    "per_dataset": {
+      "hotpotqa": {
+        "question_count": 2000,
+        "fixed_farr_f1": 0.641512876339347,
+        "farr_eva_f1": 0.6617578463203463,
+        "delta_f1": 0.02024496998099934
+      },
+      "2wiki": {
+        "question_count": 2000,
+        "fixed_farr_f1": 0.49945991157535274,
+        "farr_eva_f1": 0.5904080453859865,
+        "delta_f1": 0.09094813381063371
+      },
+      "musique": {
+        "question_count": 2000,
+        "fixed_farr_f1": 0.401123526011026,
+        "farr_eva_f1": 0.47413463124566063,
+        "delta_f1": 0.07301110523463461
+      }
     },
     "farr_eva_minus_fixed_farr": {
       "macro_f1_delta": 0.06140140300875594,
@@ -36,4 +56,3 @@
     "note": "Question IDs and outcomes are intentionally excluded until completion."
   }
 }
-

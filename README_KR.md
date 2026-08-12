@@ -2,6 +2,8 @@
 
 [![Tests](https://github.com/gangmurloc/FARR-EVA/actions/workflows/tests.yml/badge.svg)](https://github.com/gangmurloc/FARR-EVA/actions/workflows/tests.yml)
 
+[English README](README.md)
+
 이 저장소는 FLARE, IRCoT, FARR가 생성한 다중 홉 QA 후보를 검색 근거와
 추론 trace에 기반해 사후 중재하는 FARR-EVA의 공개용 연구 코드입니다.
 원래 실험 작업공간에서 핵심 코드, 작은 동결 selector, 테스트, 검증된
@@ -20,6 +22,13 @@
 따라서 이 저장소는 FARR-EVA가 보편적으로 최고라고 주장하지 않습니다.
 핵심 연구 질문, 구현, 잠금 프로토콜, 성공과 실패 진단을 재현 가능한
 형태로 보여주는 포트폴리오용 연구 아티팩트입니다.
+
+## 연구 질문
+
+데이터셋 이름, expert identity, gold answer, gold supporting fact, runtime
+counter 같은 직접적인 shortcut 정보를 추론 입력으로 사용하지 않고,
+retrieved evidence와 reasoning trace에서 측정한 특성만으로 여러 QA
+trajectory 중 더 신뢰할 수 있는 답변을 선택할 수 있는가?
 
 ## 작성자와 기여
 

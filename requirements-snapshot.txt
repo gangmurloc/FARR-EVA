@@ -1,4 +1,5 @@
 # Direct dependency snapshot used by the reported local environment.
+# This is not a fully resolved transitive lock file.
 # PyTorch CUDA wheel availability depends on the platform and package index.
 datasets==4.8.5
 huggingface-hub==0.24.6

@@ -3,7 +3,7 @@
 ## Environment snapshot
 
 The direct package versions recorded with the reported local environment are
-listed in `requirements-lock.txt`. In particular, the timed configuration used
+listed in `requirements-snapshot.txt`. In particular, the timed configuration used
 PyTorch 2.5.1 with CUDA 12.1, Transformers 4.44.2, scikit-learn 1.7.2,
 NumPy 2.2.6, and SciPy 1.15.3. GPU compatibility still depends on the host
 driver and the PyTorch wheel source.

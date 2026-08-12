@@ -11,6 +11,7 @@ remain deliberate follow-up work rather than hidden completion claims.
 - [x] Repository description and provenance documented in the README
 - [x] Direct dependency snapshot recorded
 - [x] Prior methods, datasets, and external models attributed
-- [ ] Author completes upstream source-file provenance review
+- [x] Automated comparison against official FLARE/IRCoT repository heads recorded
+- [ ] Author confirms whether any individual upstream code fragments were consulted or adapted
 - [ ] Author selects a compatible open-source license, if appropriate
 - [ ] Test-D status is updated only after the locked evaluation is complete

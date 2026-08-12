@@ -7,7 +7,7 @@ name = "farr-eva-research"
 version = "0.1.0"
 description = "Research code for evidence-vector arbitration over multi-hop QA experts"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.11"
 dependencies = [
   "datasets",
   "huggingface-hub",
@@ -26,4 +26,3 @@ include = ["farr*", "farr_star*"]
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
-

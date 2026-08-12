@@ -2,6 +2,8 @@
 
 [![Tests](https://github.com/gangmurloc/FARR-EVA/actions/workflows/tests.yml/badge.svg)](https://github.com/gangmurloc/FARR-EVA/actions/workflows/tests.yml)
 
+[한국어 README](README_KR.md)
+
 FARR-EVA is a research prototype for **post-execution arbitration** among
 three completed multi-hop QA trajectories: embedded FLARE, IRCoT, and FARR.
 It decomposes candidate answers and traces into claims, measures their support
@@ -70,6 +72,15 @@ MuSiQue).
 | Fixed FARR anchor | 0.5140 | 0.4125 |
 | FARR-EVA | 0.5754 | 0.4608 |
 
+The same locked result by dataset is:
+
+| Dataset | Fixed FARR F1 | FARR-EVA F1 | Delta |
+|---|---:|---:|---:|
+| HotpotQA | 0.6415 | 0.6618 | +0.0202 |
+| 2WikiMultiHopQA | 0.4995 | 0.5904 | +0.0909 |
+| MuSiQue | 0.4011 | 0.4741 | +0.0730 |
+| **Macro** | **0.5140** | **0.5754** | **+0.0614** |
+
 The paired macro-F1 difference was **+0.0614**, with a 95% dataset-stratified
 bootstrap interval of **[0.0529, 0.0700]**.
 
@@ -97,7 +108,7 @@ pip install -e .
 ```
 
 The direct dependency versions recorded with the reported environment are in
-[`requirements-lock.txt`](requirements-lock.txt). They are a reproduction
+[`requirements-snapshot.txt`](requirements-snapshot.txt). They are a reproduction
 snapshot, not a promise that every CUDA build is portable across machines.
 
 Candidate generation uses local Hugging Face causal and sequence-classification
