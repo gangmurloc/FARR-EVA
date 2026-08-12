@@ -1,0 +1,11 @@
+# Direct dependency snapshot used by the reported local environment.
+# PyTorch CUDA wheel availability depends on the platform and package index.
+datasets==4.8.5
+huggingface-hub==0.24.6
+joblib==1.5.3
+numpy==2.2.6
+scikit-learn==1.7.2
+scipy==1.15.3
+torch==2.5.1+cu121
+tqdm==4.68.3
+transformers==4.44.2

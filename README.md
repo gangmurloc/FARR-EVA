@@ -1,5 +1,7 @@
 # FARR-EVA Research Artifact
 
+[![Tests](https://github.com/gangmurloc/FARR-EVA/actions/workflows/tests.yml/badge.svg)](https://github.com/gangmurloc/FARR-EVA/actions/workflows/tests.yml)
+
 FARR-EVA is a research prototype for **post-execution arbitration** among
 three completed multi-hop QA trajectories: embedded FLARE, IRCoT, and FARR.
 It decomposes candidate answers and traces into claims, measures their support
@@ -9,6 +11,27 @@ shared pairwise linear utility to select an answer.
 This repository is a compact, auditable release extracted from the research
 workspace. It intentionally excludes raw datasets, generated candidate pools,
 large model checkpoints, experiment logs, and manuscript files.
+
+## Author
+
+**Gangil Lee** — Undergraduate Researcher, NLP Laboratory, Hallym University
+
+Research interests: natural language processing, large language models,
+retrieval-augmented generation, and multi-hop question answering.
+
+## My contributions
+
+- Designed the FARR-EVA evidence-vector arbitration framework.
+- Implemented candidate evidence measurement and selector training.
+- Constructed the HotpotQA, 2WikiMultiHopQA, and MuSiQue evaluation protocol.
+- Implemented locked evaluation, paired bootstrap analysis, integrity checks,
+  unit tests, and the compact public release.
+
+FLARE and IRCoT are prior methods used here as candidate-generation
+strategies. The local implementations are research adaptations rather than
+official reproductions. See [Attribution](#attribution) and
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for the boundary between
+prior work and this project.
 
 ## Research question
 
@@ -66,11 +89,16 @@ Machine-readable values and interpretation boundaries are in
 ## Install
 
 ```bash
-cd farr-eva-release
+git clone https://github.com/gangmurloc/FARR-EVA.git
+cd FARR-EVA
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
 ```
+
+The direct dependency versions recorded with the reported environment are in
+[`requirements-lock.txt`](requirements-lock.txt). They are a reproduction
+snapshot, not a promise that every CUDA build is portable across machines.
 
 Candidate generation uses local Hugging Face causal and sequence-classification
 models and therefore requires sufficient model storage and, for the reported
@@ -88,6 +116,31 @@ python scripts/preflight_public_release.py
 The demo loads the small validation-locked selector artifact and scores a
 synthetic three-candidate feature group. It is an API smoke test, not a QA
 quality benchmark.
+
+## Reproduce
+
+The smallest runnable reproduction is the frozen-artifact smoke test:
+
+```bash
+python examples/selector_demo.py
+```
+
+To inspect the full experiment interfaces without downloading models or data:
+
+```bash
+python prepare_farr_eva_test_c.py --help
+python run_farr_eva_test_c_candidates.py --help
+python extract_candidate_evidence_features.py --help
+python train_farr_eva_selector.py --help
+python analyze_farr_eva_test_c.py --help
+```
+
+Full candidate generation requires benchmark records, prepared split
+manifests, local model weights, and substantial GPU time. The exact Test-C IDs
+and generated candidate rows are intentionally not redistributed; therefore,
+the repository does not mislabel the smoke test as an exact end-to-end Test-C
+reproduction. The stages and expected inputs are documented in
+[`docs/reproducibility.md`](docs/reproducibility.md).
 
 ## Reproduction map
 
@@ -120,7 +173,7 @@ Excluded:
 - raw or prepared datasets;
 - generated candidate/evidence rows;
 - multi-gigabyte Hugging Face model weights;
-- logs, exploratory outputs, manuscripts, and author metadata;
+- logs, exploratory outputs, and manuscripts;
 - the unpublished Test-D question manifest and results.
 
 ## Limitations
@@ -132,9 +185,27 @@ Excluded:
 - Test-C does not settle the comparison between FARR-EVA and the corrected
   portable selector; the fresh Test-D was created for that purpose.
 
+## Attribution
+
+This project builds on or evaluates with the following prior work and public
+resources:
+
+- [FLARE: Active Retrieval Augmented Generation](https://arxiv.org/abs/2305.06983)
+- [IRCoT: Interleaving Retrieval with Chain-of-Thought Reasoning](https://arxiv.org/abs/2212.10509)
+- [HotpotQA](https://arxiv.org/abs/1809.09600)
+- [2WikiMultiHopQA](https://arxiv.org/abs/2011.01060)
+- [MuSiQue](https://aclanthology.org/2022.tacl-1.31/)
+- [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)
+- [BGE reranker v2 m3](https://huggingface.co/BAAI/bge-reranker-v2-m3)
+- [DeBERTa NLI model](https://huggingface.co/MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli)
+
+FARR and FARR-EVA are the project-local retrieval/revision and arbitration
+components. Model weights and benchmark records are not redistributed here;
+users must follow each upstream resource's terms.
+
 ## License
 
 No open-source license has been selected yet. Public visibility does not grant
 permission to copy, modify, or redistribute the code. The author should choose
 a license after verifying compatibility with all included code and model
-artifacts.
+artifacts. See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
