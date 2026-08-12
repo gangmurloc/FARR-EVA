@@ -1,5 +1,5 @@
 {
-  "schema": "farr-eva-public-test-c-summary-v2",
+  "schema": "farr-eva-public-test-c-summary-v3",
   "analysis_role": "locked Test-C result plus separately labelled post-hoc diagnostic",
   "test_c": {
     "question_count": 6000,
@@ -12,6 +12,33 @@
     "fixed_farr": {
       "macro_f1": 0.5140321046419086,
       "macro_exact_match": 0.41250000000000003
+    },
+    "fixed_baselines": {
+      "rarr": {
+        "macro_f1": 0.39714822590647003,
+        "macro_exact_match": 0.3035
+      },
+      "rag": {
+        "macro_f1": 0.4227324623959481,
+        "macro_exact_match": 0.333
+      },
+      "flare": {
+        "macro_f1": 0.5105567449167809,
+        "macro_exact_match": 0.4088333333333333
+      },
+      "flare-embedded": {
+        "macro_f1": 0.5109197821332625,
+        "macro_exact_match": 0.4093333333333333
+      },
+      "ircot": {
+        "macro_f1": 0.5120861987109375,
+        "macro_exact_match": 0.4018333333333333
+      },
+      "farr": {
+        "macro_f1": 0.5140321046419086,
+        "macro_exact_match": 0.41250000000000003,
+        "analysis_role": "validation-fixed anchor and primary comparator"
+      }
     },
     "per_dataset": {
       "hotpotqa": {
@@ -38,6 +65,18 @@
       "ci95": [0.05287098906200009, 0.06998712915964754],
       "bootstrap_repetitions": 20000,
       "method": "paired dataset-stratified percentile bootstrap"
+    },
+    "posthoc_per_dataset_best_fixed_diagnostic": {
+      "warning": "Baseline identities were selected from Test-C aggregate scores; this is not the primary confirmatory comparison.",
+      "methods": {
+        "hotpotqa": "farr",
+        "2wiki": "flare",
+        "musique": "ircot"
+      },
+      "reference_macro_f1": 0.5286458431747132,
+      "farr_eva_minus_reference_macro_f1": 0.046787664475951375,
+      "ci95": [0.03906993191548113, 0.05473162379015318],
+      "bootstrap_repetitions": 20000
     }
   },
   "posthoc_selector_diagnostic": {

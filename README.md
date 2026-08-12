@@ -61,18 +61,43 @@ The same feature function and utility are shared across candidates. FARR is the
 anchor; the selector switches only when the best alternative clears the frozen
 utility threshold.
 
+### Internal namespace
+
+The `farr_star` namespace contains the current FARR-EVA selector and
+evidence-measurement components together with legacy FARR-STAR, EPR, and ODR
+research modules. The namespace is retained because the frozen selector
+artifact refers to `farr_star.eva_selector`; FARR-STAR is not reported as a
+separate method in the present FARR-EVA results.
+
 ## Verified Test-C result
 
 The frozen FARR-EVA artifact was evaluated once on a question-disjoint Test-C
 containing 6,000 questions (2,000 each from HotpotQA, 2WikiMultiHopQA, and
 MuSiQue).
 
-| System | Macro F1 | Macro EM |
-|---|---:|---:|
-| Fixed FARR anchor | 0.5140 | 0.4125 |
-| FARR-EVA | 0.5754 | 0.4608 |
+### Primary confirmatory comparison
 
-The same locked result by dataset is:
+FARR was fixed from validation as the anchor and primary comparator before
+Test-C was evaluated. It was not selected after inspecting Test-C. For context,
+it is also the strongest globally fixed single expert on Test-C by macro F1.
+
+| System | Macro F1 | Macro EM | Analysis role |
+|---|---:|---:|---|
+| RARR | 0.3971 | 0.3035 | Fixed single baseline |
+| RAG | 0.4227 | 0.3330 | Fixed single baseline |
+| FLARE | 0.5106 | 0.4088 | Fixed single baseline |
+| Embedded FLARE | 0.5109 | 0.4093 | Fixed candidate expert |
+| IRCoT | 0.5121 | 0.4018 | Fixed candidate expert |
+| **FARR** | **0.5140** | **0.4125** | **Validation-fixed anchor and primary comparator** |
+| **FARR-EVA** | **0.5754** | **0.4608** | **Proposed arbitration layer** |
+
+The complete table prevents the primary FARR comparison from being mistaken
+for a comparison chosen against a weak baseline. The local FLARE and IRCoT
+implementations are research adaptations rather than official reproductions.
+
+### Dataset-level primary result
+
+The locked FARR comparison by dataset is:
 
 | Dataset | Fixed FARR F1 | FARR-EVA F1 | Delta |
 |---|---:|---:|---:|
@@ -83,6 +108,14 @@ The same locked result by dataset is:
 
 The paired macro-F1 difference was **+0.0614**, with a 95% dataset-stratified
 bootstrap interval of **[0.0529, 0.0700]**.
+
+As a conservative post-hoc context check, the strongest fixed expert was
+identified separately for each Test-C dataset (FARR on HotpotQA, FLARE on
+2WikiMultiHopQA, and IRCoT on MuSiQue). FARR-EVA exceeded that test-selected
+composite reference by **+0.0468** macro F1, with a 95% interval of
+**[0.0391, 0.0547]**. Because the reference identities were determined from
+Test-C aggregate scores, this is a diagnostic rather than the primary
+confirmatory comparison.
 
 These numbers establish improvement over the fixed FARR anchor on Test-C; they
 do **not** establish that FARR-EVA is the best possible selector. A later
@@ -103,7 +136,23 @@ Machine-readable values and interpretation boundaries are in
 git clone https://github.com/gangmurloc/FARR-EVA.git
 cd FARR-EVA
 python -m venv .venv
+```
+
+Activate the environment for your platform:
+
+```bash
+# Linux/macOS
 source .venv/bin/activate
+```
+
+```powershell
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+```
+
+Then install the package:
+
+```bash
 pip install -e .
 ```
 
@@ -217,6 +266,7 @@ users must follow each upstream resource's terms.
 ## License
 
 No open-source license has been selected yet. Public visibility does not grant
-permission to copy, modify, or redistribute the code. The author should choose
-a license after verifying compatibility with all included code and model
-artifacts. See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+permission to copy, modify, or redistribute the code. A project-wide
+open-source license will be selected only after source provenance and
+compatibility have been fully reviewed. See
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
