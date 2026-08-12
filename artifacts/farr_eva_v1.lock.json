@@ -1,0 +1,12 @@
+{
+  "schema": "farr-eva-validation-lock-v1",
+  "artifact": "artifacts/farr_eva_v1.joblib",
+  "artifact_sha256": "3e4fbcf54301441424fa185872ebcb0ddd6aadc446ed8bf727096ae08e9954d8",
+  "validation_report": "artifacts/farr_eva_v1_validation_report.json",
+  "validation_report_sha256": "46b8526cb1a829327ead10d0c52c49969762fec6a7ff4c5b9f9eb0e15a322600",
+  "feature_profile": "full_proof",
+  "c_value": 0.03,
+  "switch_threshold": 0.5,
+  "status": "LOCKED_BEFORE_TEST_C",
+  "prohibition": "Do not change features, models, threshold, candidates, metrics, or Test-C IDs after this lock is created."
+}

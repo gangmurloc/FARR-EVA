@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local credentials and caches
+.env
+.env.*
+!.env.example
+.cache/
+wandb/
+
+# Generated research data and outputs
+data/
+outputs/
+analysis_logs/
+checkpoints/
+*.log
+*.bak
+
+# Large model artifacts. The small frozen selector explicitly tracked under
+# artifacts/ is allow-listed below.
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.joblib
+!artifacts/farr_eva_v1.joblib
+
+# Manuscript and author-identifying submission material
+drafts/
+submission*/
+title_page.*
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+

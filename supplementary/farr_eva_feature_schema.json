@@ -1,0 +1,93 @@
+{
+  "schema": "farr-eva-exact-feature-schema-v1",
+  "feature_count": 28,
+  "feature_names": [
+    "answer_contradiction_max",
+    "answer_entail_max",
+    "answer_entail_mean",
+    "answer_exact_evidence_units_log",
+    "answer_lexical_coverage_max",
+    "answer_margin_max",
+    "answer_relevance_max",
+    "answer_relevance_mean",
+    "answer_tokens_log",
+    "answer_trace_alignment",
+    "answer_weighted_support",
+    "contract_ok",
+    "proof_contradiction_max",
+    "proof_entail_mean",
+    "proof_entail_min",
+    "proof_evidence_title_diversity",
+    "proof_margin_mean",
+    "proof_margin_min",
+    "proof_supported_fraction",
+    "shape=boolean",
+    "shape=long",
+    "shape=numeric",
+    "shape=short",
+    "trace_contradiction_max",
+    "trace_entail_mean",
+    "trace_entail_min",
+    "trace_margin_mean",
+    "trace_margin_min"
+  ],
+  "profiles": {
+    "full_proof": [
+      "answer_contradiction_max", "answer_entail_max", "answer_entail_mean",
+      "answer_exact_evidence_units_log", "answer_lexical_coverage_max",
+      "answer_margin_max", "answer_relevance_max", "answer_relevance_mean",
+      "answer_tokens_log", "answer_trace_alignment", "answer_weighted_support",
+      "contract_ok", "proof_contradiction_max", "proof_entail_mean",
+      "proof_entail_min", "proof_evidence_title_diversity", "proof_margin_mean",
+      "proof_margin_min", "proof_supported_fraction", "shape=boolean",
+      "shape=long", "shape=numeric", "shape=short",
+      "trace_contradiction_max", "trace_entail_mean", "trace_entail_min",
+      "trace_margin_mean", "trace_margin_min"
+    ],
+    "evidence_only": [
+      "answer_contradiction_max", "answer_entail_max", "answer_entail_mean",
+      "answer_exact_evidence_units_log", "answer_lexical_coverage_max",
+      "answer_margin_max", "answer_relevance_max", "answer_relevance_mean",
+      "answer_weighted_support", "contract_ok", "proof_contradiction_max",
+      "proof_entail_mean", "proof_entail_min", "proof_evidence_title_diversity",
+      "proof_margin_mean", "proof_margin_min", "proof_supported_fraction",
+      "trace_contradiction_max", "trace_entail_mean", "trace_entail_min",
+      "trace_margin_mean", "trace_margin_min"
+    ],
+    "answer_evidence_only": [
+      "answer_contradiction_max", "answer_entail_max", "answer_entail_mean",
+      "answer_exact_evidence_units_log", "answer_lexical_coverage_max",
+      "answer_margin_max", "answer_relevance_max", "answer_relevance_mean",
+      "answer_tokens_log", "answer_trace_alignment", "answer_weighted_support",
+      "contract_ok", "shape=boolean", "shape=long", "shape=numeric", "shape=short"
+    ],
+    "nli_core": [
+      "answer_contradiction_max", "answer_entail_max", "answer_entail_mean",
+      "answer_margin_max", "answer_weighted_support", "contract_ok",
+      "proof_contradiction_max", "proof_entail_mean", "proof_entail_min",
+      "proof_evidence_title_diversity", "proof_margin_mean", "proof_margin_min",
+      "proof_supported_fraction", "shape=boolean", "shape=long", "shape=numeric",
+      "shape=short", "trace_contradiction_max", "trace_entail_mean",
+      "trace_entail_min", "trace_margin_mean", "trace_margin_min"
+    ]
+  },
+  "profile_source": {
+    "path": "train_farr_eva_selector.py",
+    "function": "feature_profiles",
+    "sha256": "57985967c5026128e11b118598fc327f795c15e278628191710c30f5f7b864ad"
+  },
+  "extraction_source": {
+    "path": "farr_star/evidence_verifier.py",
+    "sha256": "ebb3df6902bfe58549035682a2c2d4821a4207088fd9a47efa3129670825affb",
+    "functions": [
+      "evidence_units", "candidate_claims", "lexical_prefilter",
+      "_aggregate_candidate", "extract_question_features", "feature_schema",
+      "feature_vector"
+    ]
+  },
+  "contract_source": {
+    "path": "farr_star/contracts.py",
+    "sha256": "c3f7f155be06c79396ca1d5a19bc31b0b208000ebac98e2a566886d42a8a7dd0",
+    "functions": ["heuristic_contract", "answer_contract_compliance"]
+  }
+}
