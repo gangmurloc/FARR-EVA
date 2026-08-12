@@ -16,7 +16,7 @@ large model checkpoints, experiment logs, and manuscript files.
 
 ## Author
 
-**Gangil Lee** — Undergraduate Researcher, NLP Laboratory, Hallym University
+**Ganggil Lee** — Undergraduate Researcher, NLP Laboratory, Hallym University
 
 Research interests: natural language processing, large language models,
 retrieval-augmented generation, and multi-hop question answering.
