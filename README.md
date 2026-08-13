@@ -106,6 +106,8 @@ The locked FARR comparison by dataset is:
 | MuSiQue | 0.4011 | 0.4741 | +0.0730 |
 | **Macro** | **0.5140** | **0.5754** | **+0.0614** |
 
+![Test-C dataset-level F1 comparison](docs/assets/test_c_dataset_f1.svg)
+
 The paired macro-F1 difference was **+0.0614**, with a 95% dataset-stratified
 bootstrap interval of **[0.0529, 0.0700]**.
 
@@ -130,7 +132,23 @@ Machine-readable values and interpretation boundaries are in
 [`results/test_c_summary.json`](results/test_c_summary.json) and
 [`docs/research_status.md`](docs/research_status.md).
 
+## Repository map
+
+| Path | Purpose |
+|---|---|
+| `farr_star/eva_selector.py` | FARR-EVA arbitration selector and validation-locked artifact compatibility target |
+| `farr_star/evidence_verifier.py` | Claim/evidence measurement and feature extraction support |
+| `extract_candidate_evidence_features.py` | Candidate evidence-vector construction |
+| `train_farr_eva_selector.py` | Pairwise selector training |
+| `analyze_farr_eva_test_c.py` | Locked Test-C evaluation and bootstrap analysis |
+| `artifacts/` | Validation-locked selector and metadata |
+| `results/` | Compact machine-readable reported results |
+| `docs/research_status.md` | Confirmatory vs post-hoc interpretation boundaries |
+
 ## Install
+
+Python **3.10** is required for the reported and released environment
+(`pyproject.toml` pins `>=3.10,<3.11`).
 
 ```bash
 git clone https://github.com/gangmurloc/FARR-EVA.git

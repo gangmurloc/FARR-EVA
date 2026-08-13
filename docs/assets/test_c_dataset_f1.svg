@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+  <title id="title">Test-C dataset-level F1 comparison</title>
+  <desc id="desc">Grouped bar chart comparing fixed FARR and FARR-EVA F1 on HotpotQA, 2WikiMultiHopQA, MuSiQue, and macro average.</desc>
+  <rect width="760" height="420" fill="#ffffff"/>
+  <text x="46" y="36" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#111827">Test-C dataset-level F1</text>
+  <text x="46" y="60" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#4b5563">Fixed FARR anchor vs FARR-EVA arbitration layer</text>
+  <line x1="86" y1="330" x2="708" y2="330" stroke="#111827" stroke-width="1.4"/>
+  <line x1="86" y1="92" x2="86" y2="330" stroke="#111827" stroke-width="1.4"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#4b5563">
+    <text x="52" y="334">0.0</text>
+    <text x="52" y="286">0.2</text>
+    <text x="52" y="238">0.4</text>
+    <text x="52" y="190">0.6</text>
+    <text x="52" y="143">0.8</text>
+    <text x="52" y="95">1.0</text>
+  </g>
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="86" y1="282.4" x2="708" y2="282.4"/>
+    <line x1="86" y1="234.8" x2="708" y2="234.8"/>
+    <line x1="86" y1="187.2" x2="708" y2="187.2"/>
+    <line x1="86" y1="139.6" x2="708" y2="139.6"/>
+    <line x1="86" y1="92" x2="708" y2="92"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle">
+    <rect x="128" y="177.3" width="42" height="152.7" fill="#6b7280"/>
+    <rect x="174" y="172.5" width="42" height="157.5" fill="#2563eb"/>
+    <text x="149" y="168" fill="#374151">.6415</text>
+    <text x="195" y="163" fill="#1d4ed8">.6618</text>
+    <text x="172" y="356" fill="#111827">HotpotQA</text>
+
+    <rect x="288" y="211.1" width="42" height="118.9" fill="#6b7280"/>
+    <rect x="334" y="189.5" width="42" height="140.5" fill="#2563eb"/>
+    <text x="309" y="202" fill="#374151">.4995</text>
+    <text x="355" y="181" fill="#1d4ed8">.5904</text>
+    <text x="332" y="356" fill="#111827">2WikiMultiHopQA</text>
+
+    <rect x="448" y="234.5" width="42" height="95.5" fill="#6b7280"/>
+    <rect x="494" y="217.2" width="42" height="112.8" fill="#2563eb"/>
+    <text x="469" y="225" fill="#374151">.4011</text>
+    <text x="515" y="208" fill="#1d4ed8">.4741</text>
+    <text x="492" y="356" fill="#111827">MuSiQue</text>
+
+    <rect x="608" y="207.7" width="42" height="122.3" fill="#6b7280"/>
+    <rect x="654" y="193.0" width="42" height="137.0" fill="#2563eb"/>
+    <text x="629" y="199" fill="#374151">.5140</text>
+    <text x="675" y="184" fill="#1d4ed8">.5754</text>
+    <text x="652" y="356" fill="#111827">Macro</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#111827">
+    <rect x="520" y="30" width="14" height="14" fill="#6b7280"/>
+    <text x="542" y="42">Fixed FARR</text>
+    <rect x="620" y="30" width="14" height="14" fill="#2563eb"/>
+    <text x="642" y="42">FARR-EVA</text>
+  </g>
+  <text x="46" y="395" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6b7280">Values are from the locked Test-C dataset-level primary result in results/test_c_summary.json.</text>
+</svg>

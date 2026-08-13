@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this research artifact, please cite it using the metadata below."
+title: "FARR-EVA: Evidence-Vector Arbitration for Multi-Hop Question Answering"
+version: "0.1.0"
+date-released: "2026-08-12"
+authors:
+  - family-names: "Lee"
+    given-names: "Ganggil"
+repository-code: "https://github.com/gangmurloc/FARR-EVA"
+url: "https://github.com/gangmurloc/FARR-EVA"
+abstract: "A compact research artifact for post-execution evidence-vector arbitration among FLARE, IRCoT, and FARR multi-hop QA trajectories."
